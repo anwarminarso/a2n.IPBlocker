@@ -41,7 +41,7 @@ dimana
 | LastCheck | "2022-02-01" | adalah tanggal terakhir dicheck, field ini akan selalu diupdate secara automatis |
 | Interval | minimal 1 | interval pooling dalam detik, default 5 detik |
 | Verbose | true / false | untuk mengeluarkan log lebih detail |
-| Command | ssh / sshd | untuk check journalctrl di ssh atau sshd (untuk lebih jelasnya coba lakukan perintah ``journalctl -ssh --since "today"`` atau ``journalctl -sshd --since "today"``, tentukan mana yg keluar log nya |
+| Command | ssh / sshd | untuk check journalctrl di ssh atau sshd (untuk lebih jelasnya coba lakukan perintah ``journalctl -u ssh --since "today"`` atau ``journalctl -u sshd --since "today"``, tentukan mana yg keluar log nya |
 | LazyLoad | true /false | untuk memaksa load file ``/etc/hosts.allow`` dan ``/etc/hosts.deny`` setiap pooling |
 
 ### IPBlocker Service
