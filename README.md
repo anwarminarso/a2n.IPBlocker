@@ -23,14 +23,37 @@ which dotnet
 ### Extract file
 Extract file folder IPBloker ke local server
 
+Konfigurasi appsettings.json
+```
+{
+  "Settings": {
+    "LastCheck": "2022-02-01",
+    "Interval": 5, // pooling every 5 seconds
+    "Verbose": false,
+    "Command": "ssh", //ssh or sshd ?
+    "LazyLoad":  false
+  }
+}
+```
+dimana 
+| Konfigurasi | Nilai | Keterangan |
+| --- | --- | --- |
+| LastCheck | --- | adalah tanggal terakhir dicheck, field ini akan selalu diupdate secara automatis |
+| Interval | minimal 1 | interval pooling dalam detik, default 5 detik |
+| Verbose | true / false | untuk mengeluarkan log lebih detail |
+| Command | ssh / sshd | untuk check journalctrl di ssh atau sshd (untuk lebih jelasnya coba lakukan perintah ``journalctl -ssh --since "today"`` atau ``journalctl -sshd --since "today"``, tentukan mana yg keluar log nya |
+| LazyLoad | true /false | untuk memaksa load file ``/etc/hosts.allow`` dan ``/etc/hosts.deny`` setiap pooling |
+
 ### IPBlocker Service
 Agar aplikasi berjalan pada saat startup
 ```bash
 sudo nano /etc/systemd/system/ipblocker.service
 ```
-
-pada isi file perlu diperhatikan paramter Working Directory dan ExecStart
+Pada isi file perlu diperhatikan paramter Working Directory dan ExecStart
 pada contoh dibawah WorkingDirectory ``/home/IPBlocker`` adalah folder dimana terdapat file ``a2n.IPBlocker.dll`` dan folder ``/usr/local/bin/dotnet`` adalah path yg didapat dengan cara ``which dotnet``
+
+Isi file pada ipblocker.server adalah sbb:
+
 ```
 [Unit]
 Description=a2n IPBlocker
