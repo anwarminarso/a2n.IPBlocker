@@ -5,3 +5,4 @@ a2n.IPBlocker/obj
 Release
 a2n.IPBlocker/Properties/PublishProfiles/pub .NET 5.pubxml.user
 a2n.IPBlocker/Properties/PublishProfiles/pub .NET 6.pubxml.user
+a2n.IPBlocker/a2n.IPBlocker.csproj.user
