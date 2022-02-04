@@ -2,10 +2,12 @@
 
 a2n.IPBlocker adalah aplikasi kecil yang secara automatis menambahkan daftar IP white list dan IP banned/black list. 
 Aplikasi ini sangat tergantung pada file /etc/hosts.allow dan /etc/hosts.deny.
-Trigger automasi terjadi ketika ada user malakukan login ssh/sshd ke server linux, denngan kondisi:
+Trigger automasi terjadi ketika ada user malakukan login ssh/sshd ke server linux, denngan kondisi
+
 Jika IP belum terdaftar
 - Jika pertama kali gagal login, maka secara automatis dimasukan ke daftar black list
 - Jika pertama kali berhasil login, maka secara automatis dimasukan ke daftar white list
+
 Dan jika IP sudah terdaftar pada white list, tidak akan masuk ke black list atau white list lagi 
 
 
