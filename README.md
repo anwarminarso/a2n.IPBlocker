@@ -54,7 +54,7 @@ sudo nano /etc/systemd/system/ipblocker.service
 Pada isi file perlu diperhatikan paramter Working Directory dan ExecStart
 pada contoh dibawah WorkingDirectory ``/home/IPBlocker`` adalah folder dimana terdapat file ``a2n.IPBlocker.dll`` dan folder ``/usr/local/bin/dotnet`` adalah path yg didapat dengan cara ``which dotnet``
 
-Isi file pada ipblocker.server adalah sbb:
+Isi file pada ipblocker.service adalah sbb:
 
 ```
 [Unit]
